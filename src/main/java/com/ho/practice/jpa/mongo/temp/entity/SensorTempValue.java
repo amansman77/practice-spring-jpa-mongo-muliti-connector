@@ -1,7 +1,5 @@
 package com.ho.practice.jpa.mongo.temp.entity;
 
-import java.time.LocalDateTime;
-
 import com.mongodb.lang.NonNull;
 
 import lombok.Builder;
@@ -22,6 +20,6 @@ public class SensorTempValue {
 	private String data;
 	
 	@NonNull
-	private LocalDateTime registDate;
+	private String registDate;
 	
 }

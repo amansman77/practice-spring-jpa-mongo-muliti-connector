@@ -13,7 +13,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.ho.practice.jpa.mongo.temp.entity.SensorTempData;
 import com.ho.practice.jpa.mongo.temp.entity.SensorTempValue;
 import com.ho.practice.jpa.mongo.temp.repository.SensorTempDataRepository;
-import com.ho.practice.jpa.mongo.util.DateUtil;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -30,7 +29,7 @@ public class SensorTempDataRepositoryTest {
 		List<SensorTempData> testData = List.of(
 				SensorTempData.builder().key(key)
 					.value(SensorTempValue.builder().sensorId(sensorId).data("123")
-							.registDate(DateUtil.getLocalDateTime("20201214095050005", DateUtil.PATTERN_DATE_TIME_YYYYMMDDHHMMSS_SSS)).build()).build()
+							.registDate("20201214095050005").build()).build()
 				);
 		sensorTempDataRepository.saveAll(testData);
 		

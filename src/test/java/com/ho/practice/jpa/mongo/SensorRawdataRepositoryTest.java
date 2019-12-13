@@ -25,7 +25,7 @@ public class SensorRawdataRepositoryTest {
 	SensorRawdataRepository sensorRawdataRepository;
 
 	@Test
-	public void countBySensorIdTest() {
+	public void CRDTest() {
 		//given
 		String sensorId = "ST1-WT-CT-IN";
 		List<SensorRawdata> testData = Arrays.asList(
