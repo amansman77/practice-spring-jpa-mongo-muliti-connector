@@ -20,6 +20,11 @@ public interface SensorTempDataRepository extends MongoRepository<SensorTempData
 			"}", sort = "{\"value.registDate\":-1}")
 	List<SensorTempData> findBySensorId(String sensorId, Pageable pageable);
 	
+	@Query(value = "{"
+			+ "\"value.sensorId\": {$regex : ?0}" + 
+			"}", delete = true)
+	void deleteBySensorId(String testMongoSensorId);
+	
 	void deleteByKey(String string);
 
 	long countByKey(String key);

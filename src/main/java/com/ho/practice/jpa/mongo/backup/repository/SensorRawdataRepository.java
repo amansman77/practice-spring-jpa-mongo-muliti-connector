@@ -7,6 +7,9 @@ import com.ho.practice.jpa.mongo.backup.entity.SensorRawdata;
 
 public interface SensorRawdataRepository extends MongoRepository<SensorRawdata, String> {
 	
+	@Query(value = "{"
+			+ "sensorId: {$regex : ?0}" + 
+			"}", delete = true)
 	void deleteBySensorId(String sensorId);
 
 	@Query(value = "{"
